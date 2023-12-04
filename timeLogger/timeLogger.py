@@ -43,29 +43,30 @@ def sendTime(log: str, time: float):
     f.write (f"{log},{time}\n")
     f.close()
 
+def main():
+    parser = argparse.ArgumentParser(prog='Time Logger', description='A simple Command Line Interface that can log your time.')
+    toggle = parser.add_mutually_exclusive_group()
 
-parser = argparse.ArgumentParser(prog='Time Logger', description='A simple Command Line Interface that can log your time.')
-toggle = parser.add_mutually_exclusive_group()
+    toggle.add_argument('-s', '--start', action="store_true")
+    toggle.add_argument('-e', '--stop', action="store_true")
+    parser.add_argument('-l', '--log', type=str)
+    toggle.add_argument('-c', '--crump', action="store_true")
+    args = parser.parse_args()
 
-toggle.add_argument('-s', '--start', action="store_true")
-toggle.add_argument('-e', '--stop', action="store_true")
-parser.add_argument('-l', '--log', type=str)
-toggle.add_argument('-c', '--crump', action="store_true")
-args = parser.parse_args()
+    if (args.start):
+        # print(time.ctime(time.time()))
+        startTime = time.time()
+        sendTime("Start", startTime)
+        
+    elif (args.stop):
+        stop()
 
-if (args.start):
-    # print(time.ctime(time.time()))
-    startTime = time.time()
-    sendTime("Start", startTime)
-    
-elif (args.stop):
-    stop()
+    if bool(args.log):
+        stopTime = time.time()
+        startTime = calcStartTime()
 
-if bool(args.log):
-    stopTime = time.time()
-    startTime = calcStartTime()
+        if not math.isnan(startTime):
+            sendTime(args.log, stopTime)
+        else:
+            print("You must start the timer before you can log. To start the timer type -s or --start")
 
-    if not math.isnan(startTime):
-        sendTime(args.log, stopTime)
-    else:
-        print("You must start the timer before you can log. To start the timer type -s or --start")

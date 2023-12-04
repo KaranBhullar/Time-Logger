@@ -1,0 +1,2 @@
+[console_scripts]
+timeLogger = timeLogger.timeLogger:main
