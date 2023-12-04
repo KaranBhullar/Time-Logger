@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='pyexample',
+    name='timeLogger',
     version='1.0',    
     description='TimeLogger is a simple stopwatch CLI tool.',
     url='https://github.com/KaranBhullar/Time-Logger',
