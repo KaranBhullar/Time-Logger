@@ -18,7 +18,9 @@ And its all ready! Currently, there are three functions available: start, stop, 
 To start timeLogger, run the following:
 
 `timeLogger -s` 
+
 or
+
 `timeLogger --start`
 
 To stop timeLogger, run the following
