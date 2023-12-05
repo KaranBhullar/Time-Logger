@@ -26,7 +26,9 @@ or
 To stop timeLogger, run the following
 
 `timelogger -e`
+
 or
+
 `timeLogger --stop`
 
 Note to end the timer, `-s` must be invoked first to start the timer.
@@ -34,5 +36,7 @@ Note to end the timer, `-s` must be invoked first to start the timer.
 An example use case of the log function is as follows:
 
 `timeLogger -l "Accomplished a task!"`
+
 or
+
 `timeLogger --log "Accomplished a task!"`
