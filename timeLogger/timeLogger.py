@@ -50,7 +50,6 @@ def main():
     toggle.add_argument('-s', '--start', action="store_true")
     toggle.add_argument('-e', '--stop', action="store_true")
     parser.add_argument('-l', '--log', type=str)
-    toggle.add_argument('-c', '--crump', action="store_true")
     args = parser.parse_args()
 
     if (args.start):
